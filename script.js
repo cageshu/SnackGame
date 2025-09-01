@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 游戏配置
     const gridSize = 20; // 网格大小
     const tileCount = canvas.width / gridSize; // 网格数量
-    let speed = 7; // 游戏速度
+    let speed = 6; // 游戏速度（降低20%后约为5.6，取整为6）
 
     // 游戏状态
     let gameRunning = false;
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreElement.textContent = score;
 
             // 增加速度
-            if (score % 50 === 0 && speed < 15) {
+            if (score % 50 === 0 && speed < 12) {
                 speed += 1;
             }
 
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gamePaused = false;
         gameOver = false;
         score = 0;
-        speed = 7;
+        speed = 6;
         scoreElement.textContent = score;
         pauseBtn.textContent = '暂停';
 
